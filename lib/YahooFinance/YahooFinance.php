@@ -26,7 +26,7 @@ class YahooFinance {
 		}
 
 		$options = $this->options;
-		$options['q'] = "select * from yahoo.finance.historicaldata where startDate='{$startDate}' and endDate='{$endDate}' and symbol='{$symbol}'";
+		$options['q'] = "env 'store://datatables.org/alltableswithkeys'; select * from yahoo.finance.historicaldata where startDate='{$startDate}' and endDate='{$endDate}' and symbol='{$symbol}'";
 		
 		return $this->execQuery($options);
 	}
@@ -37,7 +37,7 @@ class YahooFinance {
 		}
 
 		$options = $this->options;
-		$options['q'] = "select * from yahoo.finance.quotes where symbol in ('" . implode("','", $symbols) . "')";
+		$options['q'] = "env 'store://datatables.org/alltableswithkeys'; select * from yahoo.finance.quotes where symbol in ('" . implode("','", $symbols) . "')";
 		
 		return $this->execQuery($options);
 	}
@@ -48,7 +48,7 @@ class YahooFinance {
 		}
 
 		$options = $this->options;
-		$options['q'] = "select * from yahoo.finance.quoteslist where symbol in ('" . implode("','", $symbols) . "')";
+		$options['q'] = "env 'store://datatables.org/alltableswithkeys'; select * from yahoo.finance.quoteslist where symbol in ('" . implode("','", $symbols) . "')";
 		
 		return $this->execQuery($options);
 	}
