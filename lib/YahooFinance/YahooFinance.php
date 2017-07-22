@@ -1,5 +1,5 @@
 <?php
-
+namespace Dope\YahooFinance;
 
 class YahooFinance {
 	private $yqlUrl  = "http://query.yahooapis.com/v1/public/yql";

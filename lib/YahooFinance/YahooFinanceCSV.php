@@ -1,4 +1,7 @@
 <?php
+namespace Dope\YahooFinance;
+
+use DateTime;
 
 class YahooFinanceCSV {
 	private $url = "http://ichart.finance.yahoo.com/table.csv";
