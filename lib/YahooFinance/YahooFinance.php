@@ -57,7 +57,7 @@ class YahooFinance {
 		$yql_query_url = $this->getUrl($options);
 		$session = curl_init($yql_query_url);  
 		curl_setopt($session, CURLOPT_RETURNTRANSFER,true);      
-		return curl_exec($session);    		
+		return json_decode(curl_exec($session));
 	}
 
 	private function getUrl($options) {
